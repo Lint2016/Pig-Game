@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="Images/diceimg.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modal.css" />
+    <!-- SweetAlert2 CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Pig Game</title>
+  </head>
+  <body>
+    <div id="player-names" class="modal">
+      <div class="modal-content">
+        <h2>🎲 Welcome to Pig Game! 🎲</h2>
+        
+        <div class="game-instructions">
+          <h3>How to Play:</h3>
+          <ol>
+            <li>Players take turns to roll a die</li>
+            <li>Each roll gets added to your current score</li>
+            <li>If you roll a 1, you lose your current points and your turn ends</li>
+            <li>Use the <strong>Hold</strong> button to save your points and end your turn</li>
+            <li>First player to reach 40 points wins!</li>
+          </ol>
+          <p class="tip">Tip: Be careful not to get too greedy or you might lose your points!</p>
+        </div>
+        
+        <form id="player-form">
+          <div class="form-group">
+            <label for="player1">Player 1 Name:</label>
+            <input type="text" id="player1" value="Player 1" required>
+          </div>
+          <div class="form-group">
+            <label for="player2">Player 2 Name:</label>
+            <input type="text" id="player2" value="Player 2" required>
+          </div>
+          <button type="submit" class="btn">🎮 Start Game</button>
+        </form>
+      </div>
+    </div>
+    <main class="hidden">
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0"></h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1"></h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new" ontouchstart="">🔄 New game</button>
+      <button class="btn btn--roll" ontouchstart="">🎲 Roll dice</button>
+      <button class="btn btn--hold" ontouchstart="">📥 Hold</button>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
